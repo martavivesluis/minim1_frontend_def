@@ -1,0 +1,39 @@
+<p><input [(ngModel)]="id" placeholder="text">
+  <button (click)="Mostrar()">Mostrar Usuaris
+  </button>
+  estudiant works!
+</p>
+<div *ngIf="!connectedUser">
+  <input [(ngModel)]="nombre" >
+  <input [(ngModel)]="password" >
+  <button (click)="connect()">Conectar</button>
+</div>
+<div *ngIf="altresrol">
+  <span>
+    Servei disponible unicament per administradors
+  </span>
+</div>
+<div *ngIf="connectedUser">
+<table >
+  <thead>
+  Dades de l'administrador
+      <tr>
+        <td> nombre  </td>
+        <td>apellidos </td>
+        <td> rol </td>
+        <td> estado </td>
+      </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{myuser.nombre }}</td>
+    <td>{{myuser.apellidos}}</td>
+   <td>{{ myuser.rol}}</td>
+   <td>{{ myuser.estado }}</td>
+  </tr>
+     </tbody>
+
+
+</table>
+
+</div>

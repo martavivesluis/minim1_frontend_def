@@ -1,0 +1,48 @@
+<form (submit)="sendFilter($event)">
+  <div >
+      <label class="control-label"> Filtrar por:  </label>
+      <select class="form-control" [(ngModel)]="option" name="filtrar" id="filtrar" >
+        <option value="name">Nombre</option>
+        <option value="surnames">Apellidos</option>
+        <option value="rol">Rol</option>
+        <option value="estado">Estat</option>
+      </select>
+  </div>
+  <div>
+    <input [(ngModel)]="filter" name="filter">
+  </div>
+
+
+
+  <div>
+        <button  type="submit" class="btn-btn-primary"> Buscar </button>
+  </div>
+  </form>
+
+<div>
+  <button (click)="sendMessageclass()"> Ordenar Alfabéticament </button>
+</div>
+<table >
+  <thead>
+  Dades de l'administrador
+  <tr >
+    <td> nombre  </td>
+    <td>apellidos </td>
+    <td> rol </td>
+    <td> estado </td>
+    <td> Modificar </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let myuser of usuaris">
+    <td>{{myuser.nombre }}</td>
+    <td>{{myuser.apellidos}}</td>
+    <td>{{ myuser.rol}}</td>
+    <td>{{ myuser.estado }}</td>
+    <td> <button (click)="Modificar(myuser)"> Modificar</button></td>
+  </tr>
+
+  </tbody>
+
+
+</table>
